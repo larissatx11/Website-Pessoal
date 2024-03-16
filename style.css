@@ -21,7 +21,7 @@ body {
     padding: 20px;
 }
 
-/* Estilos para telas maiores que 768px (computador) */
+/* Estilo para telas maiores que 768px (computador) */
 @media only screen and (min-width: 768px) {
     header {
         background-color: #4CB1BD;
@@ -74,13 +74,15 @@ body {
     }
 }
 
-/* Estilos para telas menores ou iguais a 768px (celular) */
+/* Estilo para telas menores ou iguais a 768px (celular) */
 @media only screen and (max-width: 768px) {
     header {
         flex-direction: column;
         align-items: center;
         background-color: #4CB1BD;
         color: #fff;
+        border-radius: 5px;
+        text-align: center;
     }
 
     /*Inserindo a imagem*/
@@ -90,42 +92,37 @@ body {
     }
 
     .profile-picture img {
-        border-radius: 15%; /* Define a borda da imagem como arredondada */
+        border-radius: 70%; /* Define a borda da imagem como arredondada */
         width: 80px; /* Define a largura da imagem */
         height: auto; /* Altura automática para manter a proporção */
         object-fit: cover; /* Mantém a proporção da imagem e corta o excesso */
-        margin-right: 20px;
-        margin-left: 20px;
+        margin-top: 10px; 
     }
 
     nav ul {
-        list-style: none;
-        margin: 0;
+        margin: 20;
         padding: 0;
         display: flex;
         align-items: center;
+        margin-left: 50px;
+        font-size: 15px;
     }
 
     nav ul li {
         display: inline;
         margin-right: 10px;
-    }
-
-    nav ul li:last-child {
-        margin-right: 0; /* Remove a margem direita do último item */
+        margin-bottom: 10px;
+        margin-top: 12px;
     }
 
     nav ul li a {
         color: #fff; /* Cor do texto */
         text-decoration: none;
     }
-    
-    nav ul {
-        align-items: center; /* Alinha os itens de navegação à direita */
-    }
 
-    nav ul li {
-        margin-bottom: 10px; /* Adiciona um espaço entre os itens de navegação */
+    h1 {
+        font-size: 23px;
+        text-align: center;
     }
 }
 
@@ -150,7 +147,6 @@ h3 {
     margin-bottom: 10px;
     border-radius: 5px;
 }
-
 
 .logo img {
     border-radius: 15%;
@@ -188,7 +184,6 @@ a:hover {
     height: 13px; 
     width: 50%;  /* Define a largura da barra de progresso em relação à largura da div pai */
 }
-
 
 footer {
     text-align: center;
