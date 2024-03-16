@@ -1,0 +1,158 @@
+/* Reset de Estilos */
+/* controlam o espaçamento, preenchimento e modelo de caixa dos elementos*/
+* {
+    margin: 0; 
+    padding: 3;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth; /* Adiciona um comportamento de rolagem suave a toda a página */
+}
+
+
+/* Estilos Globais*/
+/* definem a família de fontes, altura da linha, cor de fundo e cor do texto */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+    padding: 20px;
+}
+
+header {
+    background-color: #4CB1BD;
+    color: #fff;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between; /* Distribui os elementos igualmente ao longo do eixo horizontal */
+    align-items: center;
+    border-radius: 5px;
+}
+
+ /*Inserindo a imagem*/
+.profile-picture {
+    display: flex;
+    justify-content: left;
+}
+
+.profile-picture img {
+    border-radius: 15%; /* Define a borda da imagem como arredondada */
+    width: 160px; /* Define a largura da imagem */
+    height: auto; /* Altura automática para manter a proporção */
+    object-fit: cover; /* Mantém a proporção da imagem e corta o excesso */
+    margin-right: 20px;
+    margin-left: 0px;
+}
+
+nav {
+    margin-left: auto; /* Isso empurra a lista <ul> para a direita */
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 10px;
+}
+
+nav ul li:last-child {
+    margin-right: 0; /* Remove a margem direita do último item */
+}
+
+nav ul li a {
+    color: #fff; /* Cor do texto */
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    .profile-picture img {
+        width: 80px; /* Ajuste de largura para dispositivos menores */
+    }
+    
+    nav ul {
+        flex-direction: column; /* Altera a direção dos itens de navegação para uma coluna */
+        align-items: flex-end; /* Alinha os itens de navegação à direita */
+    }
+
+    nav ul li {
+        margin-right: 0; /* Remove a margem direita dos itens de navegação */
+        margin-bottom: 10px; /* Adiciona um espaço entre os itens de navegação */
+    }
+}
+
+section {
+    margin: 20px 0;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+}
+
+h2 {
+    margin-bottom: 10px;
+}
+
+h3 {
+    margin-top: 10px;
+}
+
+.project {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+
+.logo img {
+    border-radius: 15%;
+    width: 40px; /* Define a largura da imagem */
+    height: 40px; /* Define a altura da imagem */
+    object-fit: cover; /* Mantém a proporção da imagem e corta o excesso */
+    margin-right: 10px;
+    margin-top: 10px;
+}
+
+/* Muda de cor quando o mouse passa pelo link*/
+a:hover {
+    color: #FFA500; /* Mudança de cor ao passar o mouse */
+}
+
+.elemento {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+.progress {
+    background-color: #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    height: 13px; /* Altura da barra de progresso */
+    width: 250px; /* Define um tamanho fixo para a largura da barra de progresso */
+}
+
+.progress-bar {
+    background-color: #4CB1BD;
+    color: white;
+    text-align: center;
+    padding: 0;
+    border-radius: 5px;
+    font-size: 9px; /* Reduz o tamanho da fonte */
+    height: 13px; 
+    width: 50%;  /* Define a largura da barra de progresso em relação à largura da div pai */
+}
+
+
+footer {
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #4CB1BD;
+    color: #fff;
+    text-decoration: none;
+}
