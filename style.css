@@ -40,8 +40,8 @@ body {
     }
 
     .profile-picture img {
-        border-radius: 15%; /* Define a borda da imagem como arredondada */
-        width: 160px; /* Define a largura da imagem */
+        border-radius: 15%; /* Borda arredondada */
+        width: 160px; /* Largura da imagem */
         height: auto; /* Altura automática para manter a proporção */
         object-fit: cover; /* Mantém a proporção da imagem e corta o excesso */
         margin-right: 20px;
@@ -72,7 +72,7 @@ body {
         color: #fff; /* Cor do texto */
         text-decoration: none;
     }
-}
+}  /* Fim do estilo para computador*/
 
 /* Estilo para telas menores ou iguais a 768px (celular) */
 @media only screen and (max-width: 768px) {
@@ -99,18 +99,24 @@ body {
         margin-top: 10px; 
     }
 
+    nav {
+        display: flex; /* Torna o contêiner da lista um flex container */
+        justify-content: center; /* Centraliza os itens horizontalmente */
+        text-align: center;
+    }
+
     nav ul {
+        list-style: none;
         margin: 20;
         padding: 0;
         display: flex;
-        align-items: center;
-        margin-left: 50px;
+        margin-left: 20px;
         font-size: 15px;
     }
 
     nav ul li {
         display: inline;
-        margin-right: 10px;
+        margin-right: 20px;
         margin-bottom: 10px;
         margin-top: 12px;
     }
@@ -124,7 +130,7 @@ body {
         font-size: 23px;
         text-align: center;
     }
-}
+} /* Fim do estilo para celular*/
 
 section {
     margin: 20px 0;
@@ -134,18 +140,18 @@ section {
 }
 
 h2 {
-    margin-bottom: 10px;
+    margin-bottom: 10px; /*Margem de baixo*/
 }
 
 h3 {
-    margin-top: 10px;
+    margin-top: 10px; /* Margem de cima*/
 }
 
 .project {
     border: 1px solid #ccc;
     padding: 10px;
     margin-bottom: 10px;
-    border-radius: 5px;
+    border-radius: 5px; /* Borda arredondada*/
 }
 
 .logo img {
