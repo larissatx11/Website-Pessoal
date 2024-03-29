@@ -7,17 +7,49 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-    <script>
+<script>
     window.addEventListener("scroll", function() {
 	    var header = document.getElementById("main-header");
-	    if (window.scrollY > 100) { // Ajuste o valor conforme necessário
+	    if (window.scrollY > 90) { // Ajuste o valor conforme necessário
 	        header.classList.add("small");
 	    } else {
 	        header.classList.remove("small");
 	    }
 	});
 
-    </script>
+ 	// Garantir que a página role para o início da seção correspondente
+	window.addEventListener("DOMContentLoaded", function() {
+	    // Seletor para os itens da lista
+	    const listItems = document.querySelectorAll('nav ul li');
+
+	    // Adiciona um ouvinte de evento de clique a cada item da lista
+	    listItems.forEach(item => {
+	        item.addEventListener('click', event => {
+	            // Impede o comportamento padrão do clique para evitar que a âncora funcione normalmente
+	            event.preventDefault();
+
+	            // Obtém o identificador do alvo da rolagem (pode ser um ID ou qualquer seletor válido)
+	            const targetId = item.querySelector('a').getAttribute('href');
+
+	            // Obtém o elemento alvo da rolagem
+	            const targetElement = document.querySelector(targetId);
+
+	            // Verifica se o elemento alvo existe
+	            if (targetElement) {
+	                // Calcula a posição do elemento alvo em relação ao topo da página
+	                const targetOffset = targetElement.offsetTop - document.getElementById("main-header").offsetHeight;
+
+	                // Rola a página suavemente para a posição do elemento alvo
+	                window.scrollTo({
+	                    top: targetOffset,
+	                    behavior: 'smooth' // Adiciona uma rolagem suave
+	                });
+	            }
+	        });
+	    });
+	});
+
+</script>
 
 <body>
     <header id="main-header">
@@ -42,7 +74,7 @@
 
     <section id="home">
     <h2>Bem-vindo ao meu Website Pessoal</h2>
-    <p>Olá! Me chamo Larissa e sou uma estudante do 5º período de Ciência da Computação na Universidade Federal do Ceará (UFC), campus Crateús.<br> Meu interesse pela tecnologia começou desde cedo, e minha jornada acadêmica tem sido focada em aprimorar minhas habilidades técnicas e contribuir para a comunidade de tecnologia.</p>
+    <p>Olá! Me chamo Larissa e sou estudante do 5º período de Ciência da Computação na Universidade Federal do Ceará (UFC), campus Crateús.<br> Meu interesse pela tecnologia começou desde cedo, e minha jornada acadêmica tem sido focada em aprimorar minhas habilidades técnicas e contribuir para a comunidade de tecnologia.</p>
 
     </section>
 
