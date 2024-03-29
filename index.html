@@ -4,10 +4,23 @@
     <meta charset= "UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meu Website Pessoal</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
+
+    <script>
+    window.addEventListener("scroll", function() {
+	    var header = document.getElementById("main-header");
+	    if (window.scrollY > 100) { // Ajuste o valor conforme necessário
+	        header.classList.add("small");
+	    } else {
+	        header.classList.remove("small");
+	    }
+	});
+
+    </script>
+
 <body>
-    <header>
+    <header id="main-header">
     	<div class="profile-picture">
 	        <img src="Imagens/Perfil.jpeg" alt="Foto de perfil">
 	    </div>
@@ -29,7 +42,7 @@
 
     <section id="home">
     <h2>Bem-vindo ao meu Website Pessoal</h2>
-    <p>Olá! Me chamo Larissa e sou uma estudante de Ciência da Computação na Universidade Federal do Ceará (UFC), campus Crateús.<br> Meu interesse pela tecnologia começou desde cedo, e minha jornada acadêmica tem sido focada em aprimorar minhas habilidades técnicas e contribuir para a comunidade de tecnologia.</p>
+    <p>Olá! Me chamo Larissa e sou uma estudante do 5º período de Ciência da Computação na Universidade Federal do Ceará (UFC), campus Crateús.<br> Meu interesse pela tecnologia começou desde cedo, e minha jornada acadêmica tem sido focada em aprimorar minhas habilidades técnicas e contribuir para a comunidade de tecnologia.</p>
 
     </section>
 
@@ -46,16 +59,16 @@
 	<div>
 	    <h3>Educação</h3>
 	    <ul>
-		<li>Ensino Médio - EEMTI Jáder de Figueiredo Correia (2019 - 2021)
-		<li>Cursando Ciência da Computação - Universidade Federal do Ceará (2022 - 2027)</li>
+		<li>(2019 - 2021): Ensino Médio - EEMTI Jáder de Figueiredo Correia 
+		<li>(2022 - 2027): Cursando Ciência da Computação - Universidade Federal do Ceará </li>
 	    </ul>
 	</div>
 	<div>
 	    <h3>Experiência Profissional</h3>
 	    <ul>
-		<li>Tenho experiência no meio acadêmico como bolsista de Iniciação Acadêmica (BIA)</li>
-		<li>Participo ativamente do projeto de extensão Garotas Tech dos Sertões de Crateús (GaTech)</li>
-		<li>Atualmente atuo como bolsista do Programa de Iniciação à Docencia (PID) da disciplina de Programação Orientada a Objetos (POO)</li>
+		<li>(Março - Novembro de 2022): Bolsista de Iniciação Acadêmica (BIA)</li>
+		<li>(Março de 2023 - atualmente): Membro do projeto de extensão Garotas Tech dos Sertões de Crateús (GaTech)</li>
+		<li>(Março de 2024 - atualmente): Atuo como bolsista do Programa de Iniciação à Docencia (PID) da disciplina de Programação Orientada a Objetos (POO)</li>
 	    </ul>
 	</div>
 	<div>
