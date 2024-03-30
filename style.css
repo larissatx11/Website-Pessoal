@@ -235,6 +235,10 @@ h3 {
     margin-top: 10px;
 }
 
+.logo a{
+    text-decoration: none;
+}
+
 /* Muda de cor quando o mouse passa pelo link*/
 a:hover {
     color: #FFA500; /* Mudança de cor ao passar o mouse */
