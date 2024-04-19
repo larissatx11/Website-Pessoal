@@ -17,20 +17,20 @@
         header.scrollTimeout = setTimeout(function() {
         if (screenWidth >= 768) {
             // Lógica para telas maiores ou iguais a 768px de largura
-                if (window.scrollY > 60 && !header.classList.contains("small")) { 
+                if (window.scrollY > 100 && !header.classList.contains("small")) { 
                     header.classList.add("small");
-                } else if (window.scrollY <= 60 && header.classList.contains("small")) {
+                } else if (window.scrollY <= 100 && header.classList.contains("small")) {
                     header.classList.remove("small");
                 }
         } else {
             // Lógica para telas menores que 768px de largura
-                if (window.scrollY > 10 && !header.classList.contains("small")) { 
+                if (window.scrollY > 30 && !header.classList.contains("small")) { 
                     header.classList.add("small");
-                } else if (window.scrollY <= 10 && header.classList.contains("small")) {
+                } else if (window.scrollY <= 30 && header.classList.contains("small")) {
                     header.classList.remove("small");
                 }
         }
-        }, 10); 
+        }, 20); 
     });
 	
     // Garantir que a página role para o início da seção correspondente
