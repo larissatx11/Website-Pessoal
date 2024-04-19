@@ -10,25 +10,13 @@
 <script>
     window.addEventListener("scroll", function() {
         var header = document.getElementById("main-header");
-        var screenWidth = window.innerWidth;
 
         clearTimeout(header.scrollTimeout);
-
         header.scrollTimeout = setTimeout(function() {
-        if (screenWidth >= 768) {
-            // Lógica para telas maiores ou iguais a 768px de largura
-                if (window.scrollY > 50 && !header.classList.contains("small")) { 
-                    header.classList.add("small");
-                } else if (window.scrollY <= 50 && header.classList.contains("small")) {
-                    header.classList.remove("small");
-                }
-        } else {
-            // Lógica para telas menores que 768px de largura
-                if (window.scrollY > 30 && !header.classList.contains("small")) { 
-                    header.classList.add("small");
-                } else if (window.scrollY <= 30 && header.classList.contains("small")) {
-                    header.classList.remove("small");
-                }
+        if (window.scrollY > 30 && !header.classList.contains("small")) { 
+            header.classList.add("small");
+        } else if (window.scrollY <= 30 && header.classList.contains("small")) {
+            header.classList.remove("small");
         }
         }, 20); 
     });
