@@ -9,46 +9,57 @@
 
 <script>
     window.addEventListener("scroll", function() {
-	    var header = document.getElementById("main-header");
-	    if (window.scrollY > 90) { // Ajuste o valor conforme necessário
-	        header.classList.add("small");
-	    } else {
-	        header.classList.remove("small");
-	    }
-	});
+        var header = document.getElementById("main-header");
+        var screenWidth = window.innerWidth;
 
- 	// Garantir que a página role para o início da seção correspondente
-	window.addEventListener("DOMContentLoaded", function() {
-	    // Seletor para os itens da lista
-	    const listItems = document.querySelectorAll('nav ul li');
+        clearTimeout(header.scrollTimeout);
 
-	    // Adiciona um ouvinte de evento de clique a cada item da lista
-	    listItems.forEach(item => {
-	        item.addEventListener('click', event => {
-	            // Impede o comportamento padrão do clique para evitar que a âncora funcione normalmente
-	            event.preventDefault();
+        header.scrollTimeout = setTimeout(function() {
+        if (screenWidth >= 768) {
+            // Lógica para telas maiores ou iguais a 768px de largura
+                if (window.scrollY > 60 && !header.classList.contains("small")) { 
+                    header.classList.add("small");
+                } else if (window.scrollY <= 60 && header.classList.contains("small")) {
+                    header.classList.remove("small");
+                }
+        } else {
+            // Lógica para telas menores que 768px de largura
+                if (window.scrollY > 10 && !header.classList.contains("small")) { 
+                    header.classList.add("small");
+                } else if (window.scrollY <= 10 && header.classList.contains("small")) {
+                    header.classList.remove("small");
+                }
+        }
+        }, 10); 
+    });
+	
+    // Garantir que a página role para o início da seção correspondente
+    window.addEventListener("DOMContentLoaded", function() {
+        // Seletor para os itens da lista
+        const listItems = document.querySelectorAll('nav ul li');
 
-	            // Obtém o identificador do alvo da rolagem (pode ser um ID ou qualquer seletor válido)
-	            const targetId = item.querySelector('a').getAttribute('href');
-
-	            // Obtém o elemento alvo da rolagem
-	            const targetElement = document.querySelector(targetId);
-
-	            // Verifica se o elemento alvo existe
-	            if (targetElement) {
-	                // Calcula a posição do elemento alvo em relação ao topo da página
-	                const targetOffset = targetElement.offsetTop - document.getElementById("main-header").offsetHeight;
-
-	                // Rola a página suavemente para a posição do elemento alvo
-	                window.scrollTo({
-	                    top: targetOffset,
-	                    behavior: 'smooth' // Adiciona uma rolagem suave
-	                });
-	            }
-	        });
-	    });
-	});
-
+        // Adiciona um ouvinte de evento de clique a cada item da lista
+        listItems.forEach(item => {
+            item.addEventListener('click', event => {
+                // Impede o comportamento padrão do clique para evitar que a âncora funcione normalmente
+                event.preventDefault();
+                // Obtém o identificador do alvo da rolagem 
+                const targetId = item.querySelector('a').getAttribute('href');
+                // Obtém o elemento alvo da rolagem
+                const targetElement = document.querySelector(targetId);
+                // Verifica se o elemento alvo existe
+                if (targetElement) {
+                    // Calcula a posição do elemento alvo em relação ao topo da página
+                    const targetOffset = targetElement.offsetTop - document.getElementById("main-header").offsetHeight;
+                    // Rola a página suavemente para a posição do elemento alvo
+                    window.scrollTo({
+                        top: targetOffset,
+                        behavior: 'smooth' // Adiciona uma rolagem suave
+                    });
+                }
+            });
+        });
+    });
 </script>
 
 <body>
@@ -60,7 +71,6 @@
             <h1>Ana Larissa Teixeira Dantas</h1>
             <p><font size = 2>Estudante de Ciência da Computação</font></p>
         </div>
-
 
 	<nav>
 	    <ul>
@@ -92,13 +102,13 @@
 	    <h3>Educação</h3>
 	    <ul>
 		<li>(2019 - 2021): Ensino Médio - EEMTI Jáder de Figueiredo Correia 
-		<li>(2022 - 2027): Cursando Ciência da Computação - Universidade Federal do Ceará </li>
+		<li>(2022 - atualmente): Cursando Ciência da Computação - Universidade Federal do Ceará </li>
 	    </ul>
 	</div>
 	<div>
 	    <h3>Experiência Profissional</h3>
 	    <ul>
-		<li>(Março - Novembro de 2022): Bolsista de Iniciação Acadêmica (BIA)</li>
+		<li>(Março de 2022 - Novembro de 2022): Bolsista de Iniciação Acadêmica (BIA)</li>
 		<li>(Março de 2023 - atualmente): Membro do projeto de extensão Garotas Tech dos Sertões de Crateús (GaTech)</li>
 		<li>(Março de 2024 - atualmente): Atuo como bolsista do Programa de Iniciação à Docencia (PID) da disciplina de Programação Orientada a Objetos (POO)</li>
 	    </ul>
@@ -158,19 +168,23 @@
 
     <section id="contact">
 	<h2>Contato</h2>
-	<p>E-mail: larissa.teixeira@alu.ufc.br</p>
-	<p>Telefone: (88) 98121-1148</p>
 
 	<div class="logo">
+        <a href="mailto:larissa.teixeira@alu.ufc.br">
+        <img src="Imagens/logo_email.png"alt="Logo Gmail">  
+        </a>  
+        <a href="https://wa.me/5588981211148">
+        <img src="Imagens/logo_whatsapp.png"alt="Logo Whatsapp">  
+        </a>  
 		<a href="https://www.instagram.com/_larissatx_">
-        <img src="Imagens/logo_instagram.png" alt="Logo Instagram">
+        <img src="Imagens/instagram.png" alt="Logo Instagram">
    		</a>
     	<a href="https://www.linkedin.com/in/larissa-teixeira-9261b924b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">
         <img src="Imagens/logo_linkedin.png" alt="Logo Linkedin">   
    		</a>
    		<a href="https://github.com/larissatx11">
         <img src="Imagens/logo_github.png"alt="Logo GitHub">  
-   		</a>    
+   		</a>  
    	</div>
 
     </section>
